@@ -150,7 +150,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Computer.cpp" />
+    <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\TicTacToeBoard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Computer.h" />
+    <ClInclude Include="src\Person.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\TicTacToeBoard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
