@@ -108,7 +108,7 @@ int main()
 
 	while (true) {
 		std::cout << "################################################################################\n";
-		Log("\t\t\tWelcome to the TicTacToe Project!!");
+		Log("\t\t\tWelcome to the TicTacToe Project!!\n");
 		std::cout << "################################################################################\n";
 
 		Log("\tStart playing now!");
@@ -258,13 +258,18 @@ void PvC() {
 	Computer computer1;
 
 	std::vector<std::pair<int, int>> availableMoves;
+	availableMoves.reserve(10);
 	setAvailableMoves(availableMoves);
 
 
 	std::vector<std::pair<int, int>> computerMoves;
 	std::vector<std::pair<int, int>> userMoves;
 
+	computerMoves.reserve(6);
+	userMoves.reserve(6);
+
 	std::vector<std::pair<int, int>> priorityMoves;
+	priorityMoves.reserve(6);
 	setPriorityMoves(priorityMoves);
 
 	std::pair<int, int> selected;
