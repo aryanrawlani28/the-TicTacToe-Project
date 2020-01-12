@@ -9,6 +9,11 @@ TicTacToeBoard::TicTacToeBoard()
 	};
 }
 
+const void TicTacToeBoard::getTitle()
+{
+	std::cout << mainTitle;
+}
+
 void TicTacToeBoard::PrintBoard(const TicTacToeBoard& B1) const {
 	std::cout << B1;
 }
@@ -45,140 +50,72 @@ bool TicTacToeBoard::setBoard(TicTacToeBoard& B1, const int& who, int& x, int& y
 
 bool TicTacToeBoard::checkBoardForResult(const TicTacToeBoard& B1) const {	//Checks board if someone has won. If yes, returns true. Otherwise, false.
 
-	//Performing manual checks since using loops in this context consume more memory, are unreadable and time-consuming.
+	char board[] = { 'X', 'O' };
 
-	// For 'X':
+	for (char c : board) {
+		if (c == B1.Board1[0][0]) {		//Primary diagonal
+			if (c == B1.Board1[1][1]) {
+				if (c == B1.Board1[2][2]) {
+					return true;
+				}
+			}
 
-	if ('X' == B1.Board1[0][0]) {		//Primary diagonal
-		if ('X' == B1.Board1[1][1]) {
-			if ('X' == B1.Board1[2][2]) {
-				return true;
+		}
+
+		if (c == B1.Board1[2][0]) {		//Secondary diagonal
+			if (c == B1.Board1[1][1]) {
+				if (c == B1.Board1[0][2]) {
+					return true;
+				}
+			}
+
+		}
+
+		if (c == B1.Board1[0][0]) {			// Row0
+			if (c == B1.Board1[0][1]) {
+				if (c == B1.Board1[0][2]) {
+					return true;
+				}
 			}
 		}
 
-	}
-
-	if ('X' == B1.Board1[2][0]) {		//Secondary diagonal
-		if ('X' == B1.Board1[1][1]) {
-			if ('X' == B1.Board1[0][2]) {
-				return true;
+		if (c == B1.Board1[1][0]) {			// Row1
+			if (c == B1.Board1[1][1]) {
+				if (c == B1.Board1[1][2]) {
+					return true;
+				}
 			}
 		}
 
-	}
-
-	if ('X' == B1.Board1[0][0]) {			// Row0
-		if ('X' == B1.Board1[0][1]) {
-			if ('X' == B1.Board1[0][2]) {
-				return true;
-			}
-		}
-	}
-
-	if ('X' == B1.Board1[1][0]) {			// Row1
-		if ('X' == B1.Board1[1][1]) {
-			if ('X' == B1.Board1[1][2]) {
-				return true;
-			}
-		}
-	}
-
-	if ('X' == B1.Board1[2][0]) {			// Row2
-		if ('X' == B1.Board1[2][1]) {
-			if ('X' == B1.Board1[2][2]) {
-				return true;
-			}
-		}
-	}
-
-	if ('X' == B1.Board1[0][0]) {			// Col0
-		if ('X' == B1.Board1[1][0]) {
-			if ('X' == B1.Board1[2][0]) {
-				return true;
-			}
-		}
-	}
-
-	if ('X' == B1.Board1[0][1]) {			// Col1
-		if ('X' == B1.Board1[1][1]) {
-			if ('X' == B1.Board1[2][1]) {
-				return true;
-			}
-		}
-	}
-
-	if ('X' == B1.Board1[0][2]) {			// Col2
-		if ('X' == B1.Board1[1][2]) {
-			if ('X' == B1.Board1[2][2]) {
-				return true;
-			}
-		}
-	}
-
-
-	// For O:
-
-	if ('O' == B1.Board1[0][0]) {		//Primary diagonal
-		if ('O' == B1.Board1[1][1]) {
-			if ('O' == B1.Board1[2][2]) {
-				return true;
-			}
-		}
-	}
-
-	if ('O' == B1.Board1[2][0]) {		//Secondary diagonal
-		if ('O' == B1.Board1[1][1]) {
-			if ('O' == B1.Board1[0][2]) {
-				return true;
+		if (c == B1.Board1[2][0]) {			// Row2
+			if (c == B1.Board1[2][1]) {
+				if (c == B1.Board1[2][2]) {
+					return true;
+				}
 			}
 		}
 
-	}
-
-	if ('O' == B1.Board1[0][0]) {			// Row0
-		if ('O' == B1.Board1[0][1]) {
-			if ('O' == B1.Board1[0][2]) {
-				return true;
+		if (c == B1.Board1[0][0]) {			// Col0
+			if (c == B1.Board1[1][0]) {
+				if (c == B1.Board1[2][0]) {
+					return true;
+				}
 			}
 		}
-	}
 
-	if ('O' == B1.Board1[1][0]) {			// Row1
-		if ('O' == B1.Board1[1][1]) {
-			if ('O' == B1.Board1[1][2]) {
-				return true;
+		if (c == B1.Board1[0][1]) {			// Col1
+			if (c == B1.Board1[1][1]) {
+				if (c == B1.Board1[2][1]) {
+					return true;
+				}
 			}
 		}
-	}
 
-	if ('O' == B1.Board1[2][0]) {			// Row2
-		if ('O' == B1.Board1[2][1]) {
-			if ('O' == B1.Board1[2][2]) {
-				return true;
-			}
-		}
-	}
-
-	if ('O' == B1.Board1[0][0]) {			// Col0
-		if ('O' == B1.Board1[1][0]) {
-			if ('O' == B1.Board1[2][0]) {
-				return true;
-			}
-		}
-	}
-
-	if ('O' == B1.Board1[0][1]) {			// Col1
-		if ('O' == B1.Board1[1][1]) {
-			if ('O' == B1.Board1[2][1]) {
-				return true;
-			}
-		}
-	}
-
-	if ('O' == B1.Board1[0][2]) {			// Col2
-		if ('O' == B1.Board1[1][2]) {
-			if ('O' == B1.Board1[2][2]) {
-				return true;
+		if (c == B1.Board1[0][2]) {			// Col2
+			if (c == B1.Board1[1][2]) {
+				if (c == B1.Board1[2][2]) {
+					return true;
+				}
 			}
 		}
 	}

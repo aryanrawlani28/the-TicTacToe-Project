@@ -3,15 +3,14 @@
 							The TicTacToe Project!
 	==============================================================================
 
-	A small project to demonstrate some of the main areas of OOP using C++. I've also created a small AI Path to follow for the PC in PvC!
+	A small project to demonstrate some of the main areas of OOP using C++, for fun! I've also created a small AI Path to follow for the PC in PvC!
 
 	It features 2 modes, the classics PvP and PvC.
 
-	The PvC AI is developed by my logic, and it might not be a 100% consistent rate for the AI to win. That was the purpose, since the minimax algorithm,
-	one widely used for things/games like this, is simply a thing where the player could never win.
+	The PvC AI is developed by my own assumptions on certain things, and it might not be a 100% consistent rate for the AI to win. That was the purpose, since the minimax algorithm,
+	one widely used for things/games like this, is simply a thing where the player could never win - hence, blocking all the fun out.
 
 	Made By: Aryan Rawlani
-			 aryanrawlani007@gmail.com
 */
 
 #include <iostream>
@@ -106,10 +105,13 @@ int main()
 {
 	int playerChoice;
 
+	
+
 	while (true) {
 		std::cout << "################################################################################\n";
-		Log("\t\t\tWelcome to the TicTacToe Project!!\n");
-		std::cout << "################################################################################\n";
+		//Log("\t\t\tWelcome to the TicTacToe Project!!\n");
+		TicTacToeBoard::getTitle();
+		std::cout << "\n################################################################################\n";
 
 		Log("\tStart playing now!");
 
@@ -527,6 +529,7 @@ void PvC() {
 					Log("\nPlease enter coordinates: ");		//	Zero based indexing.
 					std::cin >> x >> y;
 
+					std::cout << std::endl;
 					auto it = std::find(availableMoves.begin(), availableMoves.end(), std::make_pair(x, y));
 
 					if (x < 0 || x > 2 || y < 0 || y > 2)
