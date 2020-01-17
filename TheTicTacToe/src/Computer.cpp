@@ -5,8 +5,7 @@
 
 Computer::Computer() {
 	ComputerNames = {
-		// "CD Projekt Red", "Techland", "EA", "Rockstar", "2K", "Sony", "Take 2", "Marvel", "Bioware", "Ubisoft", "Square Enix", "Popcap", "Bethesda", "Blizzard"
-		"Dr. Dhara Bhatt", "Ms. Manali Brahmbhatt", "Ms. Nithya Nadar", "XICA", "Ms. Khushboo Shah", "Ms. Cecil Johny", "Fr. David"
+		"CD Projekt Red", "Techland", "EA", "Rockstar", "2K", "Sony", "Take 2", "Marvel", "Bioware", "Ubisoft", "Square Enix", "Popcap", "Bethesda", "Blizzard"
 	};
 	this->name = giveRandomName();
 	printer();
