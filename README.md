@@ -1,7 +1,5 @@
 # the-TicTacToe-Project
 
-A small project for fun!
+A small project for fun in C++
 
-I put some of my skills as a C++ dev to work and came up with this.
-
-Soon to add - HighScore lists, Log files of winners.
+Soon to add - HighScore lists, Log files of winners, indicators via external vendor
