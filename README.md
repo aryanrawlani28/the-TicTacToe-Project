@@ -13,4 +13,4 @@ OR
 Build:
  - Clone the repo
  - Use the C++17 flag and compile (in either release / debug of platform desired)
- - Navigate to home directory -> bin -> (platform) -> (mode) -> .exe file to play.
+ - Navigate to the project home directory -> bin -> (platform) -> (mode) -> .exe file to play.
